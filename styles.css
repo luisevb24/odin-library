@@ -1,14 +1,122 @@
+* {
+    box-sizing: border-box;
+}
+
+:root {
+    --book-color: #fbeee0;
+    --dark-color: #422800;
+}
+
 body {
     display: flex;
     flex-direction: column;
+    font-family: 'Inter Tight', sans-serif;
+}
+
+li {
+    text-decoration: none;
+    list-style: none;
+}
+
+.header {
+    background-color: var(--book-color);
+    border-bottom: 2px solid var(--dark-color);
+}
+
+.header h1{
+    color: var(--dark-color);
 }
 
 .title {
-    color: blue;
     text-align: center;
 }
 
-
 .library {
-    background-color: beige;
+    display: flex;
+    flex-direction: column;
+    padding: 10px;
+}
+
+.books {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+
+.bookCard {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    gap: 15px;
+    padding: 15px;
+    background-color: var(--book-color);
+    border: 1px solid var(--dark-color);
+    color: var(--dark-color);
+    width: 200px;
+    height: 300px;
+    text-align: center;
+    border-left: 10px solid var(--dark-color);
+    border-radius: 5px;
+    transition: transform 0.3s ease;
+}
+
+.bookCard:hover {
+    transform: translateY(-5px);
+}
+
+.bookTitle {
+    font-weight: bold;
+}
+
+.bookAuthor {
+    font-size: .9rem;
+}
+
+.bookPages {
+    font-size: .7rem;
+    font-weight: 500;
+}
+
+.bookRead::before {
+    content: "✔️";
+    margin-right: 0.5em;
+    font-size: 1.5rem;
+    color: green;
+}
+
+.bookNotRead::before {
+    content: "⏳";
+    margin-right: 0.5em;
+    font-size: 1.5rem;
+    color: goldenrod;
+}
+
+.newBook {
+    align-self: center;
+    background-color: #fbeee0;
+    border: 2px solid #422800;
+    border-radius: 10px;
+    box-shadow: #422800 4px 4px 0 0;
+    color: #422800;
+    cursor: pointer;
+    display: inline-block;
+    font-weight: 600;
+    font-size: 1rem;
+    padding: 0 18px;
+    line-height: 2.5rem;
+    text-align: center;
+    text-decoration: none;
+    user-select: none;
+    -webkit-user-select: none;
+    touch-action: manipulation;
+}
+
+.newBook:hover {
+    background-color: #fff;
+}
+
+.newBook:active {
+    box-shadow: #422800 2px 2px 0 0;
+    transform: translate(2px, 2px);
 }

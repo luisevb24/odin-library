@@ -5,16 +5,38 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Library</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter+Tight:ital,wght@0,100..900;1,100..900&display=swap"
+        rel="stylesheet">
     <link rel="stylesheet" href="styles.css">
     <script src="scripts.js" defer></script>
     <link rel="stylesheet" href="normalize.css">
 </head>
 
 <body>
-    <h1 class="title">My books</h1>
+    <div class="header">
+        <h1 class="title">Library</h1>
+    </div>
     <div class="library">
+        <button class="newBook">New Book</button>
         <ul class="books">
         </ul>
+        <dialog class="newBookModal">
+            <form action="" method="dialog">
+                <label for="book-title">Book</label>
+                <input type="text" name="book-title" id="book-title">
+
+                <label for="book-author">Author</label>
+                <input type="text" name="book-author" id="book-author">
+
+                <label for="book-pages">Number of Pages</label>
+                <input type="number" name="book-pages" id="book-pages">
+
+                <label for="book-read-state">Have you read it?</label>
+                <input type="checkbox" name="book-read-state" id="book-read-state">
+            </form>
+        </dialog>
     </div>
 </body>
 
