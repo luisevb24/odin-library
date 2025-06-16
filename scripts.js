@@ -1,4 +1,6 @@
 const myLibrary = [];
+const booksList = document.querySelector('.books');
+
 
 function Book(title, author, numOfPages, isRead, id){
     if(!new.target) throw Error;
@@ -15,3 +17,7 @@ function addBookToMyLibrary(title, author, numOfPages, isRead){
     myLibrary.push(newBook);
 }
 
+addBookToMyLibrary('Lord of Chaos', 'Robert Jordan', 800, true);
+addBookToMyLibrary('Siddharta', 'Hermann Hesse', 200, false);
+
+console.log(myLibrary);
