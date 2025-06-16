@@ -23,7 +23,7 @@ li {
     border-bottom: 2px solid var(--dark-color);
 }
 
-.header h1{
+.header h1 {
     color: var(--dark-color);
 }
 
@@ -51,7 +51,7 @@ li {
     gap: 15px;
     padding: 15px;
     background-color: var(--book-color);
-    border: 1px solid var(--dark-color);
+    border: 2px solid var(--dark-color);
     color: var(--dark-color);
     width: 200px;
     height: 300px;
@@ -119,4 +119,90 @@ li {
 .newBook:active {
     box-shadow: #422800 2px 2px 0 0;
     transform: translate(2px, 2px);
+}
+
+
+.newBook:focus {
+    outline: none;
+}
+
+.newBookModal {
+    background-color: var(--book-color);
+    padding: 30px;
+    border: 2px solid var(--dark-color);
+    border-radius: 5px;
+}
+
+.newBookForm {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    color: var(--dark-color);
+}
+
+.formInput {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 5px;
+    font-weight: 600;
+}
+
+.formInput input {
+    line-height: 1.5rem;
+    border: 2px solid var(--dark-color);
+    text-align: center;
+    color: var(--dark-color);
+    border-radius: 10px;
+}
+
+.formInput input:focus {
+    outline: 2px solid var(--dark-color);
+}
+
+.submitBook {
+    align-self: flex-end;
+    background-color: white;
+    border: 2px solid #422800;
+    border-radius: 10px;
+    box-shadow: #422800 4px 4px 0 0;
+    color: #422800;
+    cursor: pointer;
+    display: inline-block;
+    font-weight: 600;
+    font-size: 1rem;
+    padding: 0 18px;
+    line-height: 2.5rem;
+    text-align: center;
+    text-decoration: none;
+    user-select: none;
+    -webkit-user-select: none;
+    touch-action: manipulation;
+}
+
+input[type='checkbox'] {
+    width: 30px;
+    height: 30px;
+    accent-color: var(--dark-color);
+    border: 2px solid var(--dark-color);
+}
+
+input[type='checkbox']:focus {
+    outline: none;
+
+}
+
+.submitBook:active {
+    box-shadow: #422800 2px 2px 0 0;
+    transform: translate(2px, 2px);
+}
+
+.closeDialog {
+    position: absolute;
+    top: 5px;
+    right: 5px;
+    border: none;
+    background: none;
+    font-size: 1.5rem;
+    cursor: pointer;
 }

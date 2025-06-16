@@ -2,6 +2,7 @@ const myLibrary = [];
 const booksList = document.querySelector('.books');
 const newBookBtn = document.querySelector('.newBook');
 const newBookDialog = document.querySelector('.newBookModal');
+const closeDialogBtn = document.querySelector('.closeDialog');
 
 function Book(title, author, numOfPages, isRead, id){
     if(!new.target) throw Error;
@@ -51,4 +52,8 @@ myLibrary.forEach((book) => {
 
 newBookBtn.addEventListener('click', () => {
     newBookDialog.showModal();
+})
+
+closeDialogBtn.addEventListener('click', () => {
+    newBookDialog.close();
 })

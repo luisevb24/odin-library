@@ -23,18 +23,30 @@
         <ul class="books">
         </ul>
         <dialog class="newBookModal">
-            <form action="" method="dialog">
-                <label for="book-title">Book</label>
-                <input type="text" name="book-title" id="book-title">
+            <form class="newBookForm" action="" method="dialog">
 
-                <label for="book-author">Author</label>
-                <input type="text" name="book-author" id="book-author">
+                <div class="formInput">
+                    <label for="book-title">Book</label>
+                    <input type="text" name="book-title" id="book-title">
+                </div>
+                <div class="formInput">
 
-                <label for="book-pages">Number of Pages</label>
-                <input type="number" name="book-pages" id="book-pages">
+                    <label for="book-author">Author</label>
+                    <input type="text" name="book-author" id="book-author">
+                </div>
+                <div class="formInput">
 
-                <label for="book-read-state">Have you read it?</label>
-                <input type="checkbox" name="book-read-state" id="book-read-state">
+                    <label for="book-pages"># of Pages</label>
+                    <input type="number" name="book-pages" id="book-pages">
+                </div>
+
+                <div class="formInput">
+                    <label for="book-read-state">Have you read it?</label>
+                    <input type="checkbox" name="book-read-state" id="book-read-state">
+                </div>
+
+                <button class='submitBook' type="submit">Add</button>
+                <button class="closeDialog" type="button" formmethod="dialog">❌</button>
             </form>
         </dialog>
     </div>
