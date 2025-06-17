@@ -44,13 +44,15 @@ function renderBookCard(book) {
 
     const bookInfo = document.createElement('div');
     bookInfo.classList.add('bookPages');
-    bookInfo.textContent = `Number of Pages: ${book.numOfPages}`;
+    bookInfo.textContent = `${book.numOfPages} pages`;
 
-    const bookRead = document.createElement('div');
+    const bookState = document.createElement('button');
+    bookState.classList.add('bookState');
+    bookState.textContent = '';
     if (book.isRead) {
-        bookRead.classList.add('bookRead');
+        bookState.classList.add('bookRead');
     } else {
-        bookRead.classList.add('bookNotRead');
+        bookState.classList.add('bookNotRead');
     }
 
     const removeBtn = document.createElement('button');
@@ -60,7 +62,22 @@ function renderBookCard(book) {
 
     bookCard.setAttribute('data-id', book.id);
     booksList.appendChild(bookCard);
-    bookCard.append(bookTitle, bookAuthor, bookInfo, bookRead, removeBtn);
+    bookCard.append(bookTitle, bookAuthor, bookInfo, bookState, removeBtn);
+
+    bookState.addEventListener('click', (event) => {
+        const btn = event.target;
+        const bookCard = btn.parentElement;
+        const bookId = bookCard.dataset.id;
+        const newState = toggleState(bookId);
+
+        if (newState) {
+            bookState.classList.remove('bookNotRead');
+            bookState.classList.add('bookRead');
+        } else if (!newState){
+            bookState.classList.remove('bookRead');
+            bookState.classList.add('bookNotRead');
+        }
+    });
 
     removeBtn.addEventListener('click', (event) => {
         const btn = event.target;
@@ -68,7 +85,6 @@ function renderBookCard(book) {
         const bookId = bookCard.dataset.id;
         removeBook(bookId);
         bookCard.remove();
-        console.log(myLibrary);
     });
 }
 
@@ -102,4 +118,10 @@ function removeBook(bookId) {
     if (bookIndex !== -1) {
         myLibrary.splice(bookIndex, 1);
     }
+}
+
+function toggleState(bookId) {
+    const bookIndex = myLibrary.findIndex((book) => book.id == bookId);
+    myLibrary[bookIndex].toggleIsRead();
+    return myLibrary[bookIndex].isRead;
 }

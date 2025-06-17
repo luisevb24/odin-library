@@ -79,10 +79,20 @@ li {
     font-weight: 500;
 }
 
+.bookState {
+    background: none;
+    border: none;
+    cursor: pointer;
+}
+
 .bookRead::before {
     content: "✔️";
     font-size: 1.5rem;
     color: green;
+}
+
+.bookState:hover::before {
+    filter: invert();
 }
 
 .bookNotRead::before {
