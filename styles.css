@@ -44,6 +44,7 @@ li {
 }
 
 .bookCard {
+    position: relative;
     display: flex;
     flex-direction: column;
     justify-content: flex-start;
@@ -80,16 +81,43 @@ li {
 
 .bookRead::before {
     content: "✔️";
-    margin-right: 0.5em;
     font-size: 1.5rem;
     color: green;
 }
 
 .bookNotRead::before {
     content: "⏳";
-    margin-right: 0.5em;
     font-size: 1.5rem;
     color: goldenrod;
+}
+
+.removeBtn::after {
+    content: "❌";
+    font-size: 1.5rem;
+    color: var(--dark-color);
+}
+
+.removeBtn {
+    display: none;
+    position: absolute;
+    bottom: 5px;
+    right: 5px;
+    border: none;
+    background: none;
+    cursor: pointer;
+    transition: display ease 0.3s;
+}
+
+.removeBtn:hover::after {
+    color: red;
+}
+
+.bookCard:has(.removeBtn:hover) {
+    border-color: red;
+}
+
+.bookCard:hover .removeBtn {
+    display: inherit;
 }
 
 .newBook {
